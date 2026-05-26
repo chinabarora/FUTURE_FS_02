@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Website</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+
+<!-- Navbar -->
+
+<header>
+  <div class="logo">Portfolio</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+<div class="header-icons">
+
+<a href="https://www.linkedin.com/in/chinab-arora-0248b3325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+target="_blank"
+class="linkedin-icon">
+
+<i class="fa-brands fa-linkedin"></i>
+
+</a>
+
+<button id="theme-btn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+</div>
+
+</header>
+
+<!-- Home -->
+
+<section class="home" id="home">
+
+  <div class="home-text">
+    <h1>Hello, I'm <span>CHINAB </span></h1>
+
+    <h2 class="typing"></h2>
+
+    <p>
+      I’m a dedicated web developer with creative design skills.
+      I build modern and responsive websites using HTML, CSS and JavaScript.
+    </p>
+  </div>
+
+</section>
+
+<!-- About -->
+
+<section class="about" id="about">
+  <div class="about-text">
+
+    <h2>About Me</h2>
+    
+    <div class="home-img">
+
+    <img src="photo.jpeg" alt="Profile Photo">
+  </div>
+
+    <p>
+      I am a BCA student with a strong interest in web development and technology. 
+      I enjoy learning new skills and building responsive websites using HTML, CSS, and JavaScript. A passionate web developer with a creative mindset and strong coding skills.
+      I create beautiful and responsive websites with smooth user experience.
+    </p>
+
+     <a href="resume.jpeg" download class="cv-btn">Download Resume</a>
+
+  </div>
+
+</section>
+
+<!-- Portfolio -->
+
+<section class="portfolio" id="portfolio">
+
+  <h2>My Portfolio</h2>
+
+  <div class="portfolio-box">
+
+    <div class="card">
+      <img src="photo 5.jpeg">
+    </div>
+
+    <div class="card">
+      <img src="photo 3.jpeg">
+    </div>
+
+    <div class="card">
+      <img src="photo 4.jpeg">
+    </div>
+  </div>
+
+</section>
+
+<!-- Projects -->
+
+<section class="projects" id="projects">
+
+  <h2>My Projects</h2>
+
+  <div class="project-box">
+
+    <div class="project-card">
+      <i class="fa-solid fa-code"></i>
+      <h3>Personal Portfolio Website</h3>
+      <p>
+        A professional portfolio website to showcase my skills,
+        projects, and achievements with a modern responsive design.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <i class="fa-solid fa-user"></i>
+      <h3>Mini CRM System</h3>
+      <p>
+        A simple CRM project to manage client leads,
+        track status, and organize information effectively.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <i class="fa-solid fa-mug-hot"></i>
+      <h3>Coffee Shop Website</h3>
+      <p>
+        A modern coffee shop website displaying menu,
+        services, opening hours, and location details.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Skills -->
+
+<section class="skills" id="skills">
+
+  <h2>My Skills</h2>
+
+  <div class="skills-box">
+
+    <div class="skills-card">
+      <h3>HTML</h3>
+      <p>Frontend Structure Development</p>
+    </div>
+
+    <div class="skills-card">
+      <h3>CSS</h3>
+      <p>Responsive Styling & Layout Design</p>
+    </div>
+
+    <div class="skills-card">
+      <h3>JavaScript</h3>
+      <p>Interactive Website Features</p>
+    </div>
+
+    <div class="skills-card">
+      <h3>Word/Excel(Basic)</h3>
+      <p>Basic proficiency in Microsoft Word and Excel</p>
+    </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+
+<h2>Let's Talk With Me!</h2>
+
+<form id="contact-form">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<input type="text" id="github" placeholder="Github Username">
+
+<textarea id="message" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init("2ctnD-rvI0NvywY1w");
+
+document.getElementById("contact-form")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+emailjs.send("service_x4bxcn9",
+"template_bol02y8",
+{
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+github: document.getElementById("github").value,
+message: document.getElementById("message").value
+})
+
+.then(function(){
+alert("Message sent successfully!");
+document.getElementById("contact-form").reset();
+})
+
+.catch(function(error){
+alert("Failed to send");
+console.log(error);
+});
+
+});
+</script>
+
+<!-- Footer -->
+
+<footer>
+  <p>© 2026 CHINAB | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
