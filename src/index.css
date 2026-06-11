@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme CSS Variables - Default (Dark) */
+:root {
+  /* Background colors */
+  --theme-bg: #0f172a;
+  --theme-bg-secondary: #1e293b;
+  --theme-bg-tertiary: #334155;
+
+  /* Border colors */
+  --theme-border: #334155;
+  --theme-border-secondary: #475569;
+
+  /* Text colors */
+  --theme-text: #f8fafc;
+  --theme-text-secondary: #cbd5e1;
+  --theme-text-muted: #64748b;
+
+  /* Accent colors */
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #2563eb;
+  --accent-primary-light: rgba(59, 130, 246, 0.1);
+  --accent-primary-dark: #1e40af;
+  --accent-glow: rgba(59, 130, 246, 0.25);
+}
+
+/* Smooth theme transitions */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@layer base {
+  * {
+    border-color: var(--theme-border);
+  }
+
+  body {
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    @apply antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--theme-bg-secondary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--theme-border-secondary);
+    @apply rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--theme-text-muted);
+  }
+}
+
+@layer components {
+  /* Card component with theme support */
+  .card {
+    background-color: var(--theme-bg-secondary);
+    border-color: var(--theme-border);
+  }
+
+  /* Button with accent color */
+  .btn-accent {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-primary-dark));
+    box-shadow: 0 4px 15px var(--accent-glow);
+  }
+
+  .btn-accent:hover {
+    background: linear-gradient(to right, var(--accent-primary-hover), var(--accent-primary-dark));
+  }
+
+  /* Accent border */
+  .border-accent {
+    border-color: var(--accent-primary);
+  }
+
+  /* Accent text */
+  .text-accent {
+    color: var(--accent-primary);
+  }
+
+  /* Accent background */
+  .bg-accent {
+    background-color: var(--accent-primary);
+  }
+
+  .bg-accent-light {
+    background-color: var(--accent-primary-light);
+  }
+
+  /* Ring effect */
+  .ring-accent {
+    --tw-ring-color: var(--accent-primary);
+  }
+
+  /* Focus ring */
+  .focus-accent:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-primary);
+  }
+
+  /* Gradient overlay */
+  .gradient-accent {
+    background: linear-gradient(135deg, var(--accent-primary-light), transparent);
+  }
+
+  /* Active/Selected state */
+  .active-accent {
+    background: linear-gradient(to right, var(--accent-primary-light), var(--accent-primary-light));
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+  }
+
+  /* Toast component */
+  .toast {
+    @apply backdrop-blur-xl rounded-xl border shadow-lg;
+    background-color: var(--theme-bg-secondary);
+    border-color: var(--theme-border);
+  }
+
+  .toast-success {
+    border-left: 4px solid #10b981;
+  }
+
+  .toast-error {
+    border-left: 4px solid #ef4444;
+  }
+
+  .toast-info {
+    border-left: 4px solid var(--accent-primary);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .animate-theme-transition {
+    animation: themeTransition 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes themeTransition {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+/* Select dropdown styling */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-color: var(--theme-bg-tertiary);
+  border-color: var(--theme-border);
+  color: var(--theme-text);
+}
+
+/* Input focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Link colors */
+a {
+  color: var(--accent-primary);
+}
+
+a:hover {
+  color: var(--accent-primary-hover);
+}
