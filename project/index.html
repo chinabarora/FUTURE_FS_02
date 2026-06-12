@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Shop Website</title>
+<!--link to font awesome for inserting icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!--lets link google font for inserting font families-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,
+wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+ rel="stylesheet">
+<!-- Link to css file --> 
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="signinPopup" class="signin-popup">
+
+    <div class="login-container">
+
+        <!-- Left Side -->
+        <div class="login-left">
+            <h1>Every Day</h1>
+            <p>
+                Premium coffee blends crafted with passion.
+                Sign in to explore our collection.
+            </p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="login-right">
+
+            <!-- Login Form -->
+            <div id="loginForm">
+                <h2>Welcome Back</h2>
+
+                <input type="email" id="loginEmail" placeholder="Email Address">
+                <input type="password" id="loginPassword" placeholder="Password">
+
+                <button onclick="loginUser()">Sign In</button>
+
+                <p>
+                    <a href="#" onclick="showForgot()">Forgot Password?</a>
+                </p>
+
+                <p>
+                    Don't have an account?
+                    <a href="#" onclick="showSignup()">Sign Up</a>
+                </p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" style="display:none;">
+                <h2>Create Account</h2>
+
+                <input type="text" id="signupName" placeholder="Full Name">
+                <input type="email" id="signupEmail" placeholder="Email Address">
+                <input type="password" id="signupPassword" placeholder="Password">
+                <input type="password" id="signupConfirmPassword" placeholder="Confirm Password">
+
+                <button onclick="createAccount()">
+                    Create Account
+                </button>
+
+                <p>
+                    Already have an account?
+                    <a href="#" onclick="showLogin()">Login</a>
+                </p>
+            </div>
+
+            <!-- Forgot Password -->
+            <div id="forgotForm" style="display:none;">
+                <h2>Reset Password</h2>
+
+                <input type="email" id="resetEmail" placeholder="Enter Email">
+
+                <button onclick="resetPassword()">
+                    Send Reset Link
+                </button>
+
+                <p>
+                    <a href="#" onclick="showLogin()">Back to Login</a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- WEBSITE -->
+<div id="websiteContent" style="display:none;">
+<!-- Header -->
+<header>
+      <div class="container header-container">
+        <a href="#" class="logo">
+            <!--now insert coffee cup icons here-->
+          <i class="fa-solid fa-mug-hot logo-icon"></i>
+          <div class="logo-text">
+            Brew<span>Haven</span>
+        </div>
+      </a>
+
+      <nav>
+           <ul>
+               <li><a href="#home">Home</a></li>
+               <li><a href="#products">Products</a></li>
+               <li><a href="#location">Locations</a></li>
+               <li><a href="#contact">Contact</a></li>
+           </ul>
+</nav>
+
+<div class="nav-buttons">
+        <span id="displayName"></span>
+        <a href="#" class="btn btn-primary" onclick="openOrderForm()">
+    Order Online
+</a>
+</div>
+
+</div>
+
+       </header>
+<!--Hero Section-->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+              <div class="hero-subtitle">
+                    <i class="fa-solid fa-seedling"></i>
+        Ethically Sourced Beans
+    </div>
+    <h1 class="hero-title">Artisan Coffee <br>
+        <span>Crafted with passion</span></h1>
+    <p class="hero-text">Discover single-origin coffees roaster to perfection in 
+    small batches for expetional flavor.
+    Experience the journey from  bean to cup with our master rosters.</p>
+
+<div class="hero-buttons">
+    <a href="#products" class="btn btn-primary">   
+    Explore Our Blends</a>
+    <a href="#" class="btn btn-secondary">
+    Visit Our Cafe</a>
+    </div>
+</div>
+<div class="hero-image">
+<img src="4.png" alt="Hero Image" width="200px">
+</div>
+</div>
+</section>
+<!--product section-->
+    
+<section class="products" id="products">
+    <div class="container">
+
+        <div class="section-header">
+            <div class="section-subtitle">Our Selection</div>
+            <h2 class="section-title">Signature Coffee Blends</h2>
+            <p class="section-desc">
+                Each batch is carefully crafted to highlight the unique characteristics of every single-origin bean.
+            </p>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- Card 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="2.jpg.jpg" alt="Ethiopian Yirgacheffe">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-tag">BESTSELLER</div>
+                    <h3 class="product-title">Ethiopian Yirgacheffe</h3>
+                    <p class="product-desc">Floral notes with bright citrus acidity and a tea-like body. Light roast.</p>
+
+                    <div class="product-footer">
+                        <div class="product-price">RS 1000</div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="3.jpg.jpg" alt="Colombian Supremo">
+                </div>
+
+                <div class="product-info">
+                    <h3 class="product-title">Colombian Supremo</h3>
+                    <p class="product-desc">Rich caramel sweetness with nutty undertones and balanced acidity. Medium roast.</p>
+
+                    <div class="product-footer">
+                        <div class="product-price">RS 1200</div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="4.jpg.jpg" alt="Dark Roast Espresso">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-tag">NEW</div>
+                    <h3 class="product-title">Dark Roast Espresso</h3>
+                    <p class="product-desc">Bold and intense with dark chocolate notes and a creamy mouthfeel. Dark roast.</p>
+
+                    <div class="product-footer">
+                        <div class="product-price">RS 1500</div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="reviews">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-subtitle">Customer Reviews</div>
+            <h2 class="section-title">What Our Customers Say</h2>
+        </div>
+
+        <div class="review-grid">
+
+            <div class="review-card">
+                <p>"The Ethiopian Yirgacheffe is amazing. Fresh aroma and perfect flavor!"</p>
+                <h4>⭐⭐⭐⭐⭐</h4>
+                <span>- Sarah M.</span>
+            </div>
+
+            <div class="review-card">
+                <p>"Best coffee I've ever ordered online. Fast delivery and excellent quality."</p>
+                <h4>⭐⭐⭐⭐</h4>
+                <span>- James R.</span>
+            </div>
+
+            <div class="review-card">
+                <p>"Dark Roast Espresso has a rich taste and smooth finish. Highly recommended."</p>
+                <h4>⭐⭐⭐⭐⭐</h4>
+                <span>- Emily K.</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div id="orderPopup" class="order-popup">
+
+    <div class="order-box">
+
+        <div class="order-left">
+            <h2>WELCOME TO</h2>
+
+            <img src="4.png" alt="Coffee">
+
+            <h1>Coffee House</h1>
+
+            <p>
+                Enjoy our premium coffee blends.
+            </p>
+        </div>
+
+        <div class="order-right">
+
+            <span class="close-btn"
+            onclick="closeOrderForm()">×</span>
+
+            <h2>Order Online</h2>
+
+            <input type="text" placeholder="Full Name">
+
+            <input type="text" placeholder="Phone Number">
+
+            <input type="text" placeholder="Address">
+
+            <input type="number" placeholder="Quantity">
+
+            <button>Place Order</button>
+
+        </div>
+
+    </div>
+
+</div>
+        <section class="contact-section" id="contact">
+
+    <h2 class="contact-title">CONTACT US</h2>
+
+    <div class="contact-container">
+
+        <!-- LEFT SIDE -->
+        <div class="left-column">
+
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i>123 Coffee Lane, Portland, OR</p>
+                <p><i class="fas fa-envelope"></i>info@brewhaven.com</p>
+                <p><i class="fas fa-phone"></i>+91 9876543210</p>
+                <p><i class="far fa-clock"></i>Monday - Friday: 9AM - 5PM</p>
+                <p><i class="far fa-clock"></i>Saturday: 10AM - 3PM</p>
+                <p><i class="fas fa-globe"></i>www.brewhaven.com</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right-column">
+
+            <form id="contact-form" class="contact-form">
+
+                <input type="text" id="name" placeholder="Your Name" required>
+
+                <input type="email" id="email" placeholder="Your Email" required>
+
+                <textarea id="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ABOUT CARD BELOW -->
+    <div class="footer-column">
+
+        <h3>About BrewHaven</h3>
+
+        <p>
+            Artisan coffee roaster dedicated to quality,
+            sustainability and the perfect cup.
+        </p>
+
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+
+    </div>
+
+    <footer class="copyright">
+    <p>© 2025 BrewHaven. All Rights Reserved.</p>
+</footer>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    emailjs.init({
+        publicKey: "2ctnD-rvI0NvywY1w"
+    });
+
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        emailjs.send(
+            "service_x4bxcn9",
+            "template_bol02y8",
+            {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            }
+        )
+        .then(() => {
+            alert("Message sent successfully!");
+            form.reset();
+        })
+        .catch((error) => {
+            alert("Failed to send message!");
+            console.error(error);
+        });
+
+    });
+
+});
+</script>
+<!-- MAIN JS --> <script type="module" src="script.js">
+    </script>
+</body>
+ </html> 
